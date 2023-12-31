@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.list-container {
+  flex: 1;
+  min-height: 50%; // Adjust based on your design
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  flex-grow: 1;
+}

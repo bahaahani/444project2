@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      List Simulation
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="print()">Print</ion-button>
+      <ion-button (click)="reversePrint()">Reverse Print</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="list-container" cdkDropList (cdkDropListDropped)="drop($event)">
+      <ion-list class="list" *ngFor="let item of list1; let i = index" cdkDrag>
+        <ion-item>{{ item }}</ion-item>
+      </ion-list>
+    </div>
+    <div class="list-container" cdkDropList (cdkDropListDropped)="drop($event)">
+      <ion-list class="list" *ngFor="let item of list2; let i = index" cdkDrag>
+        <ion-item>{{ item }}</ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

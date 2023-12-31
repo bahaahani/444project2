@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Print Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="printForm" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Number of Copies</ion-label>
+      <ion-input type="number" formControlName="copies"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Paper Size</ion-label>
+      <ion-select formControlName="paperSize">
+        <ion-select-option value="A3">A3</ion-select-option>
+        <ion-select-option value="A4">A4</ion-select-option>
+        <!-- ... other sizes ... -->
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Print Ink Quality</ion-label>
+      <ion-select formControlName="inkQuality">
+        <ion-select-option value="low">Low</ion-select-option>
+        <ion-select-option value="medium">Medium</ion-select-option>
+        <ion-select-option value="high">High</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Print Date on Paper</ion-label>
+      <ion-toggle formControlName="printDate"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Print with Borders</ion-label>
+      <ion-toggle formControlName="printBorders"></ion-toggle>
+    </ion-item>
+    <ion-button type="submit" expand="full" [disabled]="!printForm.valid">Submit Request</ion-button>
+  </form>
+</ion-content>
