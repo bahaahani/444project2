@@ -38,7 +38,7 @@ export class Tab2Page implements OnInit {
           text: 'Okay',
           handler: () => {
             this.dataService.deletePrintRequest(id).then(() => {
-              this.fetchPrintRequests(); // Refresh the list
+              this.fetchPrintRequests(); 
             });
           },
         },

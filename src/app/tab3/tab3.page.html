@@ -1,4 +1,5 @@
-<ion-header translucent="true">
+<!-- tab3.page.html -->
+<ion-header>
   <ion-toolbar>
     <ion-title>Tab 3</ion-title>
     <ion-buttons slot="end">
@@ -18,7 +19,10 @@
   <div class="half-container">
     <h2>List2</h2>
     <ion-list>
-<ion-item *ngFor="let item of List2; let i = index" id="item-{{i}}">{{ item }}</ion-item>
+      <ion-item *ngFor="let item of list1">
+        {{ item | json }} <!-- Adjust to display the item property you want -->
+      </ion-item>
     </ion-list>
   </div>
+  <!-- Remove List 2 or Add Similar Structure if needed -->
 </ion-content>
