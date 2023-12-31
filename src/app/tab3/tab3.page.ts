@@ -1,9 +1,11 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DataService } from '../data.service'; // Correct path as necessary
-import * as dynamics from '../../assets/dynamics'; // Correct path as necessary
+// Remove the import statement for 'dynamics.js'
 import { IonItem } from '@ionic/angular';
 import { Inject } from '@angular/core';
 import { AnimationController } from '@ionic/angular'; // Add this import statement
+// At the top of your TypeScript file where you need dynamics.js
+declare var dynamics: any;
 
 @Component({
   selector: 'app-tab3',
