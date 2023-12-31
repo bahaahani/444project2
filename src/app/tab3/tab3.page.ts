@@ -1,9 +1,9 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { DataService } from '../data.service';
-//import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { AnimationController, IonItem } from '@ionic/angular';
-import { Animation } from '@ionic/core';
-// tab3.page.ts
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { DataService } from '../data.service'; // Correct path as necessary
+import * as dynamics from '../../assets/dynamics'; // Correct path as necessary
+import { IonItem } from '@ionic/angular';
+import { Inject } from '@angular/core';
+import { AnimationController } from '@ionic/angular'; // Add this import statement
 
 @Component({
   selector: 'app-tab3',
@@ -17,9 +17,37 @@ export class Tab3Page implements OnInit {
   constructor(private dataService: DataService, @Inject(AnimationController) private animationCtrl: AnimationController) {}
 
   ngOnInit() {
-    this.dataService.getPrintRequests().subscribe(data => {
-      this.list1 = data;
-      // Assume all data goes into list1, or split as needed
+    // Initialize component
+  }
+
+  print() {
+    // Animate List1 items for print action
+    this.items.forEach((item, index) => {
+      dynamics.animate(item.nativeElement, {
+        translateX: 100,
+        opacity: 0.5
+      }, {
+        type: dynamics.spring,
+        duration: 800,
+        frequency: 200,
+        delay: 100 * index // Delay each item for staggered effect
+      });
+    });
+  }
+
+  reversePrint() {
+    // Animate List1 items for reverse print action
+    const reversedItems = this.items.toArray().reverse();
+    reversedItems.forEach((item, index) => {
+      dynamics.animate(item.nativeElement, {
+        translateX: -100,
+        opacity: 0.5
+      }, {
+        type: dynamics.spring,
+        duration: 800,
+        frequency: 200,
+        delay: 100 * index // Delay each item for staggered effect
+      });
     });
   }
 }
