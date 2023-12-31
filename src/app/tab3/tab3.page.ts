@@ -1,5 +1,5 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { DataService } from '../data.service'; // Adjust this import as necessary
+import { DataService } from '../data.service'; 
 import { IonItem, AnimationController } from '@ionic/angular';
 
 @Component({
@@ -10,8 +10,8 @@ import { IonItem, AnimationController } from '@ionic/angular';
 export class Tab3Page implements OnInit {
   @ViewChildren(IonItem) items!: QueryList<IonItem>;
 
-  List1: any[] = []; // Placeholder for data from Firebase
-  List2: any[] = []; // Placeholder for data from Firebase
+  List1: any[] = []; 
+  List2: any[] = []; 
 
   constructor(
     private dataService: DataService, 
@@ -19,17 +19,17 @@ export class Tab3Page implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Fetch data from Firebase
+
     this.dataService.getPrintRequests().subscribe(data => {
-      this.List1 = data; // Assumes data is an array of items
+      this.List1 = data; 
     });
   }
 
   print() {
-    // Animate List1 items for print action
+    
     this.items.forEach((item, index) => {
       const animation = this.animationCtrl.create()
-        .addElement(item.el)
+       // .addElement(item.el)
         .duration(800)
         .delay(100 * index)
         .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
@@ -39,11 +39,11 @@ export class Tab3Page implements OnInit {
   }
 
   reversePrint() {
-    // Animate List1 items for reverse print action
+  
     const reversedItems = this.items.toArray().reverse();
     reversedItems.forEach((item, index) => {
       const animation = this.animationCtrl.create()
-        .addElement(item.el)
+       // .addElement(item.el)
         .duration(800)
         .delay(100 * index)
         .fromTo('transform', 'translateX(0px)', 'translateX(-100px)')

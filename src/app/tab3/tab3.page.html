@@ -1,4 +1,4 @@
-<!-- tab3.page.html -->
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Tab 3</ion-title>
@@ -14,7 +14,7 @@
     <h2>List1</h2>
     <ion-list>
       <ion-item *ngFor="let item of List1; let i = index" id="item-{{i}}">
-        {{ item }} <!-- Adjust based on your data structure -->
+        {{ item | json}} 
       </ion-item>
     </ion-list>
   </div>
@@ -22,7 +22,7 @@
     <h2>List2</h2>
     <ion-list>
       <ion-item *ngFor="let item of List2">
-        {{ item }} <!-- Adjust based on your data structure -->
+        {{ item | json}} 
       </ion-item>
     </ion-list>
   </div>
