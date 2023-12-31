@@ -1,26 +1,18 @@
+<!-- tab3.page.html -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      List Simulation
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="print()">Print</ion-button>
-      <ion-button (click)="reversePrint()">Reverse Print</ion-button>
-    </ion-buttons>
+    <ion-title>List Simulation</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="container">
-    <div class="list-container" cdkDropList >
-      <ion-list class="list" *ngFor="let item of list1; let i = index" cdkDrag>
-        <ion-item>{{ item }}</ion-item>
-      </ion-list>
-    </div>
-    <div class="list-container" cdkDropList >
-      <ion-list class="list" *ngFor="let item of list2; let i = index" cdkDrag>
-        <ion-item>{{ item }}</ion-item>
-      </ion-list>
-    </div>
+    <h2>List 1 from Firebase</h2>
+    <ion-list>
+      <ion-item *ngFor="let item of list1">
+        {{ item | json }} <!-- Adjust to display the item property you want -->
+      </ion-item>
+    </ion-list>
   </div>
+  <!-- Remove List 2 or Add Similar Structure if needed -->
 </ion-content>
