@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataService } from '../services/data.service'; // Adjust the path as necessary
+import { DataService } from '../data.service';
 import { ToastController } from '@ionic/angular';
 
 @Component({
