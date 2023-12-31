@@ -9,7 +9,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  printForm: FormGroup;
+  printForm: FormGroup = new FormGroup({});
 
   constructor(
     private fb: FormBuilder, 

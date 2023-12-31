@@ -1,7 +1,8 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { DataService } from '../services/data.service'; // Adjust the path as necessary
+import { DataService } from '../data.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { AnimationController, IonItem } from '@ionic/angular';
+import { Animation } from '@ionic/core';
 
 @Component({
   selector: 'app-tab3',

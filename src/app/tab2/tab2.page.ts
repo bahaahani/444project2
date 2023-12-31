@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service'; // Adjust the path as necessary
 import { AlertController } from '@ionic/angular';
-
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
